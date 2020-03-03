@@ -9,7 +9,9 @@ class ErrorException(Exception):
 class KivaDB(object):
     """
         create instance :
-        my_db = KivaDB("~/Desktop/test.db")
+        >>> my_db = KivaDB("~/Desktop/test.db")
+        >>> my_db.set("foo","bar")
+        >>> my_db.get("foo") ==> "bar"
     """
     def __init__(self,location):
         """
