@@ -1,5 +1,7 @@
 # KivaDB
-key-value database like Redis ( not same :) ) . it's for educational purpose .
+key-value database like Redis , not same :)
+
+ it's for educational purpose .
 
 usage :
 
