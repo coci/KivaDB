@@ -1,8 +1,10 @@
 import os
 import json
 
-class ErrorException:
+class ErrorException(Exception):
     pass
+
+
 class KivaDB(object):
     """
         create instance :
@@ -26,3 +28,16 @@ class KivaDB(object):
             json.dump(self.db,open(self.location,"w+"))
         except ErrorException:
             raise ErrorException("can't write on file .")
+
+    def set(self,key,value):
+        try:
+            self.db[str(key)] = value
+            self._dump()
+        except ErrorException:
+            raise ErrorException("can't write on file .")
+
+    def get(self,key):
+        try:
+            return self.db[str(key)]
+        except ErrorException:
+            raise ErrorException("invalid key .")
