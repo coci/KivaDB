@@ -1,5 +1,16 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import os
 import json
+
+__author__ = 'soroush safari'
+__version__ = 0.1
+__maintainer__ = "soroush safarii"
+__license__ = "MIT"
+__email__ = "soroush_safarii@yahoo.com"
+__github__ = "github.com/coci"
+__status__ = "Dev"
 
 
 class ErrorException(Exception):
@@ -7,17 +18,16 @@ class ErrorException(Exception):
 
 
 class KivaDB(object):
-    """
-        create instance :
-        >>> my_db = KivaDB("~/Desktop/test.db")
-        >>> my_db.set("foo","bar")
-        >>> my_db.get("foo") ==> "bar"
-    """
     def __init__(self,location):
         """
-            os.path.expanduser("~/Desktop/test.db") =return=> /Users/example/Desktop/test.db
+            create instance :
+            >>> my_db = KivaDB("~/Desktop/test.db")
+            >>> my_db.set("foo","bar")
+            >>> my_db.get("foo") ==> "bar"
+
+
         """
-        self.location = os.path.expanduser(location)
+        self.location = os.path.expanduser(location) # will return correnct path with User
         self.load()
 
     def load(self):
