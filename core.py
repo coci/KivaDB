@@ -6,12 +6,6 @@ import json
 
 __author__ = 'soroush safari'
 __version__ = 0.1
-__maintainer__ = "soroush safarii"
-__license__ = "MIT"
-__email__ = "soroush_safarii@yahoo.com"
-__github__ = "github.com/coci"
-__status__ = "Dev"
-
 
 class ErrorException(Exception):
     pass
@@ -24,8 +18,6 @@ class KivaDB(object):
             >>> my_db = KivaDB("~/Desktop/test.db")
             >>> my_db.set("foo","bar")
             >>> my_db.get("foo") ==> "bar"
-
-
         """
         self.location = os.path.expanduser(location) # will return correnct path with User
         self.load()
